@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E381EAB2427F84700072663 /* Right.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E381EA92427F84700072663 /* Right.png */; };
+		5E381EAC2427F84700072663 /* Wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E381EAA2427F84700072663 /* Wrong.png */; };
+		5ECF0C07242833FA000D7772 /* readME.md in Resources */ = {isa = PBXBuildFile; fileRef = 5ECF0C06242833F9000D7772 /* readME.md */; };
 		5EE1778A2427E37D0038256D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE177892427E37D0038256D /* AppDelegate.swift */; };
 		5EE1778C2427E37D0038256D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1778B2427E37D0038256D /* SceneDelegate.swift */; };
 		5EE1778E2427E37D0038256D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1778D2427E37D0038256D /* ViewController.swift */; };
@@ -16,7 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5EE177862427E37D0038256D /* swift_math_game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_math_game.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E381EA92427F84700072663 /* Right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Right.png; sourceTree = "<group>"; };
+		5E381EAA2427F84700072663 /* Wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wrong.png; sourceTree = "<group>"; };
+		5ECF0C06242833F9000D7772 /* readME.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readME.md; sourceTree = "<group>"; };
+		5EE177862427E37D0038256D /* mathGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mathGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EE177892427E37D0038256D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EE1778B2427E37D0038256D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5EE1778D2427E37D0038256D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,9 +43,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E381EA82427F7F600072663 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				5E381EA92427F84700072663 /* Right.png */,
+				5E381EAA2427F84700072663 /* Wrong.png */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
 		5EE1777D2427E37D0038256D = {
 			isa = PBXGroup;
 			children = (
+				5ECF0C06242833F9000D7772 /* readME.md */,
 				5EE177882427E37D0038256D /* swift_math_game */,
 				5EE177872427E37D0038256D /* Products */,
 			);
@@ -48,7 +64,7 @@
 		5EE177872427E37D0038256D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5EE177862427E37D0038256D /* swift_math_game.app */,
+				5EE177862427E37D0038256D /* mathGame.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,10 +72,11 @@
 		5EE177882427E37D0038256D /* swift_math_game */ = {
 			isa = PBXGroup;
 			children = (
+				5E381EA82427F7F600072663 /* Content */,
 				5EE177892427E37D0038256D /* AppDelegate.swift */,
 				5EE1778B2427E37D0038256D /* SceneDelegate.swift */,
-				5EE1778D2427E37D0038256D /* ViewController.swift */,
 				5EE1778F2427E37D0038256D /* Main.storyboard */,
+				5EE1778D2427E37D0038256D /* ViewController.swift */,
 				5EE177922427E3800038256D /* Assets.xcassets */,
 				5EE177942427E3800038256D /* LaunchScreen.storyboard */,
 				5EE177972427E3800038256D /* Info.plist */,
@@ -84,7 +101,7 @@
 			);
 			name = swift_math_game;
 			productName = swift_math_game;
-			productReference = 5EE177862427E37D0038256D /* swift_math_game.app */;
+			productReference = 5EE177862427E37D0038256D /* mathGame.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,6 +144,9 @@
 			files = (
 				5EE177962427E3800038256D /* LaunchScreen.storyboard in Resources */,
 				5EE177932427E3800038256D /* Assets.xcassets in Resources */,
+				5E381EAC2427F84700072663 /* Wrong.png in Resources */,
+				5E381EAB2427F84700072663 /* Right.png in Resources */,
+				5ECF0C07242833FA000D7772 /* readME.md in Resources */,
 				5EE177912427E37D0038256D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,12 +307,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UWT8ABFL89;
 				INFOPLIST_FILE = swift_math_game/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lce.swift-math-game";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lce.math-game";
+				PRODUCT_NAME = mathGame;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,12 +326,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UWT8ABFL89;
 				INFOPLIST_FILE = swift_math_game/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lce.swift-math-game";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lce.math-game";
+				PRODUCT_NAME = mathGame;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

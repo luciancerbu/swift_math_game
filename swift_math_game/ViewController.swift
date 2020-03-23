@@ -13,14 +13,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var numberOne: UILabel!
     @IBOutlet weak var operationLabel: UILabel!
     @IBOutlet weak var numberTwo: UILabel!
-    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var imageResult: UIImageView!
+    @IBOutlet weak var resultUItextField: UITextField!
     
     var auxOne = Int.random(in: 1...199)
     var auxTwo = Int.random(in: 1...199)
     var allOperations : [String] = ["+","-"]
     var auxOperation = Int.random(in: 0...1)
     var auxScore : Int = 0
+    var imagesResult = [#imageLiteral(resourceName: "Right.png"),#imageLiteral(resourceName: "Wrong.png")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resultOutput(_ sender: UITextField) {
+        resultUItextField.isUserInteractionEnabled = false
         print(sender.text ?? 0)
         let myResult :Int = Int(sender.text ?? "0") ?? 0
         switch allOperations[auxOperation] {
@@ -63,7 +66,16 @@ class ViewController: UIViewController {
         default:
             print("no operation")
         }
-    scoreLabel.text = "Score: "+String(auxScore)
+        if (auxScore != 0)
+        {
+            imageResult.image = imagesResult[0]
+        }
+        else
+        {
+            imageResult.image = imagesResult[1]
+        }
+        imageResult.isHidden = false
+        scoreLabel.text = "Score: "+String(auxScore)
     }
     
     func generateElements()  {
@@ -71,13 +83,12 @@ class ViewController: UIViewController {
         auxOne = Int.random(in: 1...199)
         auxTwo = Int.random(in: 1...199)
         auxOperation = Int.random(in: 0...1)
-        
-        
-        resultLabel.text = ""
         numberOne.text = String(auxOne)
         operationLabel.text = allOperations[auxOperation]
         numberTwo.text = String(auxTwo)
-        
+        imageResult.isHidden = true
+        resultUItextField.text=""
+        resultUItextField.isUserInteractionEnabled = true
     }
     
     
