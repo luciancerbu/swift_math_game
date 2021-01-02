@@ -51,7 +51,7 @@ class ViewController: UIViewController {
             }
             else
             {
-                auxScore = 0
+                auxScore -= 1
             }
         case "-":
             //print(myResult == auxOne - auxTwo)
@@ -80,9 +80,13 @@ class ViewController: UIViewController {
     
     func generateElements()  {
         
-        auxOne = Int.random(in: 1...199)
-        auxTwo = Int.random(in: 1...199)
+        auxOne = Int.random(in: 1...99)
         auxOperation = Int.random(in: 0...1)
+        if (auxOperation == 1)  {
+            auxTwo = Int.random(in: 1...auxOne)
+        } else {
+            auxTwo = Int.random(in: 1...99)
+        }
         numberOne.text = String(auxOne)
         operationLabel.text = allOperations[auxOperation]
         numberTwo.text = String(auxTwo)
