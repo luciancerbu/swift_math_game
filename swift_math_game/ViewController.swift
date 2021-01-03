@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     var auxOperation = Int.random(in: 0...1)
     var auxScore : Int = 0
     var imagesResult = [#imageLiteral(resourceName: "Right.png"),#imageLiteral(resourceName: "Wrong.png")]
+    var correctAnswer : Bool = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,32 +42,43 @@ class ViewController: UIViewController {
     @IBAction func resultOutput(_ sender: UITextField) {
         resultUItextField.isUserInteractionEnabled = false
         print(sender.text ?? 0)
+        correctAnswer = false;
         let myResult :Int = Int(sender.text ?? "0") ?? 0
         switch allOperations[auxOperation] {
         case "+":
             //print(myResult == auxOne + auxTwo)
             if (myResult == auxOne + auxTwo)
             {
+                correctAnswer = true;
                 auxScore+=1
             }
             else
             {
-                auxScore -= 1
+                if (auxScore > 0)  {
+                    auxScore -= 1
+                    
+                }
             }
+            break;
         case "-":
             //print(myResult == auxOne - auxTwo)
             if (myResult == auxOne - auxTwo)
             {
+                correctAnswer = true;
                 auxScore+=1
             }
             else
             {
-                auxScore = 0
+                if (auxScore > 0)  {
+                    auxScore -= 1
+                    
+                }
             }
+            break;
         default:
             print("no operation")
         }
-        if (auxScore != 0)
+        if (correctAnswer)
         {
             imageResult.image = imagesResult[0]
         }
